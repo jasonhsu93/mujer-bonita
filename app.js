@@ -60,11 +60,122 @@ const slides = [
   { image: 'image copy 3.png', alt: 'Dos mujeres lucen prendas en blanco y negro', title: 'El contraste perfecto.', kicker: 'THE EVERYDAY EDIT' },
   { image: 'image.png', alt: 'Selección de chalecos, vestidos rojos y pantalones blancos Mujer Bonita', title: 'Cada versión de ti.', kicker: 'DESCUBRE TU ESTILO' },
 ];
-document.querySelectorAll('[data-slide]').forEach(button => button.addEventListener('click', () => {
-  const slide = slides[Number(button.dataset.slide)];
-  const image = document.querySelector('#hero-image'); image.src = `assets/mujerbonita/banners/${encodeURIComponent(slide.image)}`; image.alt = slide.alt;
-  document.querySelector('#hero-title').textContent = slide.title; document.querySelector('#hero-kicker').textContent = slide.kicker;
-  document.querySelectorAll('[data-slide]').forEach(control => control.setAttribute('aria-pressed', control === button));
+const motionPreference = window.matchMedia('(prefers-reduced-motion: reduce)');
+const hero = document.querySelector('.hero');
+const heroImage = document.querySelector('#hero-image');
+const transitionImage = heroImage.cloneNode();
+transitionImage.removeAttribute('id');
+transitionImage.removeAttribute('fetchpriority');
+transitionImage.className = 'hero-transition';
+transitionImage.alt = '';
+transitionImage.setAttribute('aria-hidden', 'true');
+heroImage.after(transitionImage);
+const autoplayToggle = document.querySelector('.autoplay-toggle');
+const slideButtons = [...document.querySelectorAll('[data-slide]')];
+let currentSlide = 0;
+let slideRequest = 0;
+let slideAnimation;
+let rotationTimer;
+let manuallyPaused = motionPreference.matches;
+let hovered = false;
+let focused = false;
+let heroVisible = true;
+
+// Cache the campaign images so transitions never reveal an unloaded image.
+const campaignImages = slides.map(slide => {
+  const image = new Image();
+  image.src = `assets/mujerbonita/banners/${encodeURIComponent(slide.image)}`;
+  return image;
+});
+function canRotate() {
+  return !manuallyPaused && !motionPreference.matches && !hovered && !focused &&
+    !document.hidden && heroVisible && !document.querySelector('dialog[open]');
+}
+function restartRotation() {
+  clearTimeout(rotationTimer);
+  if (canRotate()) rotationTimer = setTimeout(async () => {
+    await showSlide((currentSlide + 1) % slides.length);
+    restartRotation();
+  }, 6000);
+}
+function updateAutoplayControl() {
+  const paused = manuallyPaused || motionPreference.matches;
+  autoplayToggle.setAttribute('aria-pressed', paused);
+  autoplayToggle.setAttribute('aria-label', motionPreference.matches ? 'Rotación automática desactivada por preferencia de movimiento reducido' : paused ? 'Reanudar rotación automática' : 'Pausar rotación automática');
+  autoplayToggle.querySelector('span').textContent = paused ? '▷' : 'Ⅱ';
+  autoplayToggle.disabled = motionPreference.matches;
+}
+async function showSlide(index) {
+  if (index === currentSlide) return;
+  const request = ++slideRequest;
+  const nextImage = campaignImages[index];
+  try { await nextImage.decode(); } catch { return; }
+  if (request !== slideRequest) return;
+  slideAnimation?.cancel();
+  currentSlide = index;
+  const slide = slides[index];
+  document.querySelector('#hero-title').textContent = slide.title;
+  document.querySelector('#hero-kicker').textContent = slide.kicker;
+  slideButtons.forEach(button => button.setAttribute('aria-pressed', Number(button.dataset.slide) === index));
+  if (!motionPreference.matches) {
+    transitionImage.src = nextImage.src;
+    slideAnimation = transitionImage.animate([{ opacity: 0 }, { opacity: 1 }], { duration: 700, easing: 'ease-in-out', fill: 'forwards' });
+    const copy = document.querySelector('.hero-copy');
+    copy.getAnimations().forEach(animation => animation.cancel());
+    copy.animate([{ opacity: 0, transform: 'translateY(10px)' }, { opacity: 1, transform: 'translateY(0)' }], { duration: 600, easing: 'ease-out' });
+    try { await slideAnimation.finished; } catch { return; }
+  }
+  if (request !== slideRequest) return;
+  heroImage.src = nextImage.src;
+  heroImage.alt = slide.alt;
+  slideAnimation?.cancel();
+}
+slideButtons.forEach(button => button.addEventListener('click', async () => {
+  clearTimeout(rotationTimer);
+  await showSlide(Number(button.dataset.slide));
+  restartRotation();
 }));
+autoplayToggle.addEventListener('click', () => {
+  manuallyPaused = !manuallyPaused;
+  updateAutoplayControl(); restartRotation();
+});
+hero.addEventListener('pointerenter', event => { if (event.pointerType === 'mouse') { hovered = true; restartRotation(); } });
+hero.addEventListener('pointerleave', () => { hovered = false; restartRotation(); });
+hero.addEventListener('focusin', () => { focused = true; restartRotation(); });
+hero.addEventListener('focusout', event => { focused = hero.contains(event.relatedTarget); restartRotation(); });
+document.addEventListener('visibilitychange', restartRotation);
+document.querySelectorAll('dialog').forEach(dialog => new MutationObserver(restartRotation).observe(dialog, { attributes: true, attributeFilter: ['open'] }));
+if ('IntersectionObserver' in window) {
+  new IntersectionObserver(entries => { heroVisible = entries[0].isIntersecting; restartRotation(); }, { threshold: 0.15 }).observe(hero);
+}
+const revealTargets = [...document.querySelectorAll('.intro, .section-heading, .collection-card, .editorial-photo, .editorial-copy, .sale > *, .contact > *, .footer-top')];
+let revealObserver;
+function configureMotion() {
+  revealObserver?.disconnect();
+  revealTargets.forEach(element => element.classList.remove('reveal-pending'));
+  if (motionPreference.matches) {
+    manuallyPaused = true;
+    hero.getAnimations({ subtree: true }).forEach(animation => animation.finish());
+  } else if ('IntersectionObserver' in window) {
+    revealObserver = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.remove('reveal-pending');
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.08 });
+    revealTargets.forEach((element, index) => {
+      if (element.getBoundingClientRect().bottom > window.innerHeight) {
+        element.style.setProperty('--reveal-delay', `${element.matches('.collection-card') ? (index % 4) * 60 : 0}ms`);
+        element.classList.add('reveal-pending');
+        revealObserver.observe(element);
+      }
+    });
+  }
+  updateAutoplayControl(); restartRotation();
+}
+motionPreference.addEventListener('change', configureMotion);
+configureMotion();
 document.querySelector('#year').textContent = new Date().getFullYear();
 renderFavorites(); search();

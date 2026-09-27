@@ -4,7 +4,7 @@ A Spanish-language, responsive fashion landing page inspired by the editorial pr
 
 Run `npm run dev` and open http://localhost:3000. Requires Node.js 22 or later; no package installation is needed. Set `PORT` to use another port.
 
-The page includes a campaign carousel, collection filters, search, and favorites saved in the browser. Collection and contact links lead to the existing Mujer Bonita store and social accounts. Featured looks are editorial selections, not a live product or inventory feed. Fonts load from Google Fonts with local system fallbacks.
+The page includes a campaign carousel that rotates every six seconds, collection filters, search, and favorites saved in the browser. The carousel pauses on hover, keyboard focus, open dialogs, and when offscreen or in a background tab; a pause/resume button provides manual control. Subtle crossfades, scroll reveals, and interaction animations respect reduced-motion preferences. Collection and contact links lead to the existing Mujer Bonita store and social accounts. Featured looks are editorial selections, not a live product or inventory feed. Fonts load from Google Fonts with local system fallbacks.
 
 Run `npm run check` for JavaScript syntax checks. Original image files remain in `assets/mujerbonita`.
 
