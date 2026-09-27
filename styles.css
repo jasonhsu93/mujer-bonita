@@ -165,3 +165,20 @@ footer{background:#fff3f8}
 @media (prefers-reduced-motion: reduce) {
   .reveal-pending { opacity: 1; transform: none; }
 }
+
+/* SVG arrows keep their shape and alignment across mobile font renderers. */
+svg.link-arrow {
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  min-width: 14px;
+  flex: 0 0 14px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.6;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  vertical-align: middle;
+}
+.announcement > a, .footer-top div > a { display: flex; align-items: center; gap: 8px; }
+.card-caption > .link-arrow { color: var(--rose); margin-top: 2px; }
