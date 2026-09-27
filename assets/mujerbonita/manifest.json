@@ -1,0 +1,295 @@
+{
+  "source_page": "https://www.mujerbonita.pe/index",
+  "images": [
+    {
+      "source_url": "https://www.mujerbonita.pe/images/amex.jpg",
+      "local_path": "images/amex.jpg",
+      "bytes": 1903,
+      "sha256": "adbe3e95a2b98bb318901caafcd0f4f99187479e5b04b5fd603e0697780f52a9",
+      "referenced_by": [
+        "index HTML (commented out)"
+      ]
+    },
+    {
+      "source_url": "https://www.mujerbonita.pe/images/dinersclub.jpg",
+      "local_path": "images/dinersclub.jpg",
+      "bytes": 1513,
+      "sha256": "5e030af961f243cca7a2de72d62c15e36bf0458a51b62efb41c45ad877776595",
+      "referenced_by": [
+        "index HTML (commented out)"
+      ]
+    },
+    {
+      "source_url": "https://www.mujerbonita.pe/images/iconobolso.png",
+      "local_path": "images/iconobolso.png",
+      "bytes": 3191,
+      "sha256": "36bd97920975a2b6bb4f9df170127cf51010d70c181945918a3f8546217f5e76",
+      "referenced_by": [
+        "index HTML"
+      ]
+    },
+    {
+      "source_url": "https://www.mujerbonita.pe/images/iconocorazon.png",
+      "local_path": "images/iconocorazon.png",
+      "bytes": 2372,
+      "sha256": "dc2faca085e4dccf1fcac90830bef833316720cc75ab61c9359349b1ccfa35db",
+      "referenced_by": [
+        "index HTML"
+      ]
+    },
+    {
+      "source_url": "https://www.mujerbonita.pe/images/iconousuario.png",
+      "local_path": "images/iconousuario.png",
+      "bytes": 2667,
+      "sha256": "f8a3838de692b804f9b228c1d2212d418323b50c19b6f50686581e38025c88a5",
+      "referenced_by": [
+        "index HTML"
+      ]
+    },
+    {
+      "source_url": "https://www.mujerbonita.pe/images/infowhats.png",
+      "local_path": "images/infowhats.png",
+      "bytes": 4475,
+      "sha256": "7fab0d4f6a32ff64b6f9a90ede7407c9c800093f633997f2a03c80e2cd5398c5",
+      "referenced_by": [
+        "index HTML"
+      ]
+    },
+    {
+      "source_url": "https://www.mujerbonita.pe/images/logo.png",
+      "local_path": "images/logo.png",
+      "bytes": 11412,
+      "sha256": "3a9da76cb84a203617eadca8b3b01020fc0eea4c50565048da04bc8621316477",
+      "referenced_by": [
+        "index HTML"
+      ]
+    },
+    {
+      "source_url": "https://www.mujerbonita.pe/images/mastercard.jpg",
+      "local_path": "images/mastercard.jpg",
+      "bytes": 1505,
+      "sha256": "e3968b6c2e9a72d84b3c523c1333b05d97a7dae6c5dd2b6f08bdf3024a7bb44c",
+      "referenced_by": [
+        "index HTML (commented out)"
+      ]
+    }
+  ],
+  "failed_downloads": [
+    {
+      "source_url": "https://www.mujerbonita.pe/hqdefault.jpg",
+      "error": "Response is not an image: text/html; charset=UTF-8"
+    },
+    {
+      "source_url": "https://www.mujerbonita.pe/images/productos/compra-ropa-online-mujer-bonita-405063766.jpg",
+      "error": "<urlopen error _ssl.c:1112: The handshake operation timed out>"
+    },
+    {
+      "source_url": "https://www.mujerbonita.pe/images/productos/compra-ropa-online-mujer-bonita-223736578.jpg",
+      "error": "The read operation timed out"
+    },
+    {
+      "source_url": "https://www.mujerbonita.pe/images/productos/compra-ropa-online-mujer-bonita-118781367.jpg",
+      "error": "The read operation timed out"
+    },
+    {
+      "source_url": "https://www.mujerbonita.pe/images/productos/compra-ropa-online-mujer-bonita-438814392.jpg",
+      "error": "<urlopen error timed out>"
+    },
+    {
+      "source_url": "https://www.mujerbonita.pe/images/productos/compra-ropa-online-mujer-bonita-442098958.jpg",
+      "error": "<urlopen error timed out>"
+    },
+    {
+      "source_url": "https://www.mujerbonita.pe/images/productos/compra-ropa-online-mujer-bonita-524798402.jpg",
+      "error": "<urlopen error timed out>"
+    },
+    {
+      "source_url": "https://www.mujerbonita.pe/images/productos/compra-ropa-online-mujer-bonita-53910629.jpg",
+      "error": "<urlopen error timed out>"
+    },
+    {
+      "source_url": "https://www.mujerbonita.pe/images/productos/compra-ropa-online-mujer-bonita-777674162.jpg",
+      "error": "<urlopen error timed out>"
+    },
+    {
+      "source_url": "https://www.mujerbonita.pe/images/productos/compra-ropa-online-mujer-bonita-796537998.jpg",
+      "error": "<urlopen error timed out>"
+    },
+    {
+      "source_url": "https://www.mujerbonita.pe/images/productos/compra-ropa-online-mujer-bonita-901337514.jpg",
+      "error": "<urlopen error timed out>"
+    },
+    {
+      "source_url": "https://www.mujerbonita.pe/images/productos/compra-ropa-online-mujer-bonita-901876792.jpg",
+      "error": "<urlopen error timed out>"
+    },
+    {
+      "source_url": "https://www.mujerbonita.pe/images/productos/compra-ropa-online-mujer-bonita-953687999.jpg",
+      "error": "<urlopen error timed out>"
+    },
+    {
+      "source_url": "https://www.mujerbonita.pe/images/triangulochico.jpg",
+      "error": "<urlopen error timed out>"
+    },
+    {
+      "source_url": "https://www.mujerbonita.pe/images/visa.jpg",
+      "error": "<urlopen error timed out>"
+    },
+    {
+      "source_url": "https://www.mujerbonita.pe/images/whatsapp-logo-footer.png",
+      "error": "<urlopen error timed out>"
+    },
+    {
+      "source_url": "https://www.mujerbonita.pe/img/compra-ropa-online-mujer-bonita-117458747.jpg",
+      "error": "<urlopen error timed out>"
+    },
+    {
+      "source_url": "https://www.mujerbonita.pe/img/compra-ropa-online-mujer-bonita-219327608.jpg",
+      "error": "<urlopen error timed out>"
+    },
+    {
+      "source_url": "https://www.mujerbonita.pe/img/compra-ropa-online-mujer-bonita-389739893.jpg",
+      "error": "<urlopen error timed out>"
+    },
+    {
+      "source_url": "https://www.mujerbonita.pe/img/compra-ropa-online-mujer-bonita-74876356.jpg",
+      "error": "<urlopen error timed out>"
+    },
+    {
+      "source_url": "https://www.mujerbonita.pe/img/compra-ropa-online-mujer-bonita-768597080.jpg",
+      "error": "<urlopen error timed out>"
+    },
+    {
+      "source_url": "https://www.mujerbonita.pe/img/compra-ropa-online-mujer-bonita-99263596.jpg",
+      "error": "<urlopen error timed out>"
+    },
+    {
+      "source_url": "https://www.mujerbonita.pe/js/vendors/compra-ropa-online-mujer-bonita-117458747.jpg",
+      "error": "<urlopen error timed out>"
+    },
+    {
+      "source_url": "https://www.mujerbonita.pe/js/vendors/compra-ropa-online-mujer-bonita-74876356.jpg",
+      "error": "<urlopen error timed out>"
+    },
+    {
+      "source_url": "https://www.mujerbonita.pe/js/vendors/images/amex.jpg",
+      "error": "<urlopen error timed out>"
+    },
+    {
+      "source_url": "https://www.mujerbonita.pe/js/vendors/images/dinersclub.jpg",
+      "error": "<urlopen error timed out>"
+    },
+    {
+      "source_url": "https://www.mujerbonita.pe/js/vendors/images/iconobolso.png",
+      "error": "<urlopen error timed out>"
+    },
+    {
+      "source_url": "https://www.mujerbonita.pe/js/vendors/images/iconocorazon.png",
+      "error": "<urlopen error timed out>"
+    },
+    {
+      "source_url": "https://www.mujerbonita.pe/js/vendors/images/iconousuario.png",
+      "error": "<urlopen error timed out>"
+    },
+    {
+      "source_url": "https://www.mujerbonita.pe/js/vendors/images/infowhats.png",
+      "error": "<urlopen error timed out>"
+    },
+    {
+      "source_url": "https://www.mujerbonita.pe/js/vendors/images/logo.png",
+      "error": "<urlopen error timed out>"
+    },
+    {
+      "source_url": "https://www.mujerbonita.pe/js/vendors/images/mastercard.jpg",
+      "error": "<urlopen error timed out>"
+    },
+    {
+      "source_url": "https://www.mujerbonita.pe/js/vendors/images/productos/compra-ropa-online-mujer-bonita-118781367.jpg",
+      "error": "<urlopen error timed out>"
+    },
+    {
+      "source_url": "https://www.mujerbonita.pe/js/vendors/images/productos/compra-ropa-online-mujer-bonita-34470839.jpg",
+      "error": "<urlopen error timed out>"
+    },
+    {
+      "source_url": "https://www.mujerbonita.pe/js/vendors/images/productos/compra-ropa-online-mujer-bonita-422232789.jpg",
+      "error": "<urlopen error timed out>"
+    },
+    {
+      "source_url": "https://www.mujerbonita.pe/js/vendors/images/productos/compra-ropa-online-mujer-bonita-438814392.jpg",
+      "error": "<urlopen error timed out>"
+    },
+    {
+      "source_url": "https://www.mujerbonita.pe/js/vendors/images/productos/compra-ropa-online-mujer-bonita-656925238.jpg",
+      "error": "<urlopen error timed out>"
+    },
+    {
+      "source_url": "https://www.mujerbonita.pe/js/vendors/images/productos/compra-ropa-online-mujer-bonita-796537998.jpg",
+      "error": "<urlopen error timed out>"
+    },
+    {
+      "source_url": "https://www.mujerbonita.pe/js/vendors/images/productos/compra-ropa-online-mujer-bonita-901337514.jpg",
+      "error": "<urlopen error timed out>"
+    },
+    {
+      "source_url": "https://www.mujerbonita.pe/js/vendors/images/productos/compra-ropa-online-mujer-bonita-866893827.jpg",
+      "error": "<urlopen error timed out>"
+    },
+    {
+      "source_url": "https://www.mujerbonita.pe/js/vendors/images/productos/compra-ropa-online-mujer-bonita-901876792.jpg",
+      "error": "<urlopen error timed out>"
+    },
+    {
+      "source_url": "https://www.mujerbonita.pe/js/vendors/images/productos/compra-ropa-online-mujer-bonita-778233324.jpg",
+      "error": "<urlopen error timed out>"
+    },
+    {
+      "source_url": "https://www.mujerbonita.pe/js/vendors/images/productos/compra-ropa-online-mujer-bonita-897772915.jpg",
+      "error": "<urlopen error timed out>"
+    },
+    {
+      "source_url": "https://www.mujerbonita.pe/js/vendors/img/compra-ropa-online-mujer-bonita-117458747.jpg",
+      "error": "<urlopen error timed out>"
+    },
+    {
+      "source_url": "https://www.mujerbonita.pe/js/vendors/images/whatsapp-logo-footer.png",
+      "error": "<urlopen error timed out>"
+    },
+    {
+      "source_url": "https://www.mujerbonita.pe/js/vendors/img/compra-ropa-online-mujer-bonita-219327608.jpg",
+      "error": "<urlopen error timed out>"
+    },
+    {
+      "source_url": "https://www.mujerbonita.pe/js/vendors/images/visa.jpg",
+      "error": "<urlopen error timed out>"
+    },
+    {
+      "source_url": "https://www.mujerbonita.pe/js/vendors/images/triangulochico.jpg",
+      "error": "<urlopen error timed out>"
+    },
+    {
+      "source_url": "https://www.mujerbonita.pe/js/vendors/images/productos/compra-ropa-online-mujer-bonita-953687999.jpg",
+      "error": "<urlopen error timed out>"
+    },
+    {
+      "source_url": "https://www.mujerbonita.pe/rs-plugin/js/===p.force3D&&1!==t&&0!==t)||p.svg&&ve||!be?(s=p.scaleX,n=p.scaleY,p.rotation||p.skewX||p.svg?(e=p.rotation*M,i=e-p.skewX*M,r=1e5,a=Math.cos(e)*s,o=Math.sin(e)*s,l=Math.sin(i)*-n,h=Math.cos(i)*n,p.svg&&(d+=p.xOrigin-(p.xOrigin*a+p.yOrigin*l),m+=p.yOrigin-(p.xOrigin*o+p.yOrigin*h),f=1e-6,f>d&&d>-f&&(d=0),f>m&&m>-f&&(m=0)),u=(0|a*r)/r+",
+      "error": "<urlopen error timed out>"
+    },
+    {
+      "source_url": "https://www.mujerbonita.pe/js/vendors/img/compra-ropa-online-mujer-bonita-99263596.jpg",
+      "error": "<urlopen error timed out>"
+    },
+    {
+      "source_url": "https://www.mujerbonita.pe/js/vendors/img/compra-ropa-online-mujer-bonita-389739893.jpg",
+      "error": "<urlopen error timed out>"
+    },
+    {
+      "source_url": "https://www.mujerbonita.pe/js/vendors/img/compra-ropa-online-mujer-bonita-74876356.jpg",
+      "error": "<urlopen error timed out>"
+    },
+    {
+      "source_url": "https://www.mujerbonita.pe/js/vendors/img/compra-ropa-online-mujer-bonita-768597080.jpg",
+      "error": "<urlopen error timed out>"
+    }
+  ]
+}
